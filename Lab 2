@@ -1,1 +1,110 @@
-
+> db.createCollection("Bank");
+> {"ok": 1 }
+> db.insert({CustID:1, Name:"Trivikran Hegde, Type:"Savings", Contact:["9945678231",
+"080-22364587"}});
+> db.Bank.Insert({CustID:1, Nane: "Trtvtkran Hegde, Type:"Savings",
+Contact:["9945678231", "060-22364587"]}); writeResult([ 'nInserted": 1})
+> db.Bank. Insert({CustID:2, Name: "Vishvesh Bhat", Type:"Savings,
+Contact:["6325985615", "000-23651452"]}); WriteResult("ninserted": 1 })
+> db.Bank. Insert({CustID:3, Name: "Vaishak that", Type:"Savings",
+Contact:["8971456321", "000-13529458"]}); WriteResult((nInserted": 1})
+> db.Bank Insert({CustID:4, Name: "Pramod P Parande", Type:"Current".
+Contact:["9745236589", "080-56324587"]});
+> writeResult({"nInserted": 1}}
+> db.Bank.insert({CustID:4, Name: "Shreyas R 5, Type:"Current",
+Contact:["9445678321","044-65611729", "080-25639856"]});
+> WriteResult({nInserted": 1})
+> db.Bank.find({});
+{_id: ObjectId("625877809329139694718882"), "CustID" : 1, "Name": "Trivikran Hegde",
+"Type": "Savings", "Contact" : [ "9945078231", "080-223645871"]}
+{_id: ObjectId("625d77bd9329139694f188a3"), "CustID": 2, "Name": "Vishvesh Bhat",
+"Type": "Savings", "Contact" : [ "6325985615", "080-23651452"]}
+{_id: ObjectId("625d77e693291396941884"), "CustID" : 3, "Name": "Vatshak Bhat",
+"Type": "Savings", "Contact" : ["8971456321", "080-335294581]
+{_id: ObjectId("625478229329139894f188a5"), "CustID" : 4, "Name": "Praned P Parande",
+"Type" : "Current", "Contact" : [ "9745236589", "080-56324587"]}
+{_id: ObjectId("625d78659329139894f188a6"), "CustID" : 4, "Name": "shreyas R 5", "Type"
+: "Current", "Contact" : [ "9445678321", "044-65011729"]}
+> db.Bank.updateMany({CustID:1},{$pop: {Contact:1}});
+{acknowledged": true, "natchedCount": 1, "nodifiedCount": 1}
+> db.Bank.find();
+{_id: ObjectId("625d7709329139694f188a2"), "CustIo": 1, "Name": "Trivikran Hegde",
+"Type": "Savings", "Contact":"9945678231" }
+{_id: ObjectId>("625d77bd9329139694f18a3"), "CustID": 2, "Name": "Vishvesh Bhat",
+"Type": "Savings", "Contact" : [ "Savings", "Contact" : [ "6325985615", "010-23651452"]}
+{_id: ObjectId("625d77e6932913989471884"), "CustID" : 3, "Name": "Vaishak Bhat",
+"Type": "Savings", "Contact":["8971456321", "080-3529458"]}
+{_id ObjectId("625d782293291396947188a5"), "CustID" : 4, "Name": "Pramod P Parande",
+"Type" : "Current", "Contact" : [ "9745236589", "080-56324587"]}
+{_id: ObjectId("625d786593291396947188a6"), "CustID": 4, "Name": "Shreyas R S",
+"Type" : "Current", "Contact" : [ "9445678321", "044-65611729"]}
+>db.Bank.updateMany({CustID: 1}), {$pull: {Contact:"000-25639856"}} };
+acknowledged": true, "natchedCount": 5, "modifiedCount": 1 }
+>db.Bank.find({});
+{_id: ObjectId("625d77809329139694f18882"), "CustID" : 1, "Name": "Trivikram Hegde",
+"Type": "Savings", "Contact" ["9945678231" ]},
+{_id: ObjectId("625877bd9329139694f1983), "CustID": 2, "Name": "Vishvesh Bhat",
+"Type": "Savings", "Contact": ["6325985615", "080-23651452"]}
+{_id: ObjectId("625677e69329139694718804"), "CustID": 3, "Name": "Vaishak Bhat",
+"Type": "Savings", "Contact":["8971456321", "080-33529458"]}
+{_id ObjectId("625d7822932913969471885), "CustID": 4, "Name": "Pranod Parande",
+"Type" : "Current", "Contact" : ["9745236589", "080-563245871"]}
+{_id: ObjectId("625678659329139694188a6"), "CustID": 4, "Name": "Shreyas RS", "Type" :
+"Current", "Contact" : [ 9445678321", "044-65011729"]}
+>db.Bank.createIndex({Name:1, Type:1}, {name:});
+uncaught exception: SyntaxError: expected expression, got '}'
+(shell)11:43
+db.Bank.createIndex({Name:1, Type:1}, {name:"Find current account holders"});
+{
+"createdCollectionAutomatically":false,
+"nunIndexesBefore": 1,
+TounIndexesAfter": 2,
+"ok": 1
+}
+>db.Bank.find({});
+{_id: ObjectId("62567708932913969410882"), "CustID": 1, "Name": "Trivikram Hegde"
+"Type": "Savings", "Contact":"9945678231"]}
+{_id: ObjectId("625477bd932913969410883"), "CustID": 2, "Name": "Vishvesh Bhat",
+"Type": "Savings", "Contact" : ["6325985615", "080-23651452"]
+{_id: ObjectId("625d77e59329139694718884"), "CustID": 3, "Name": "Vatshak Bhat",
+"Type": "Savings", "Contact: [ "8971456321", "080-33529458"]}
+{_id: ObjectId("625478229329139694f188a5″), "CustID" : 4, "Name": "Pramod P Parande",
+"Type" : "Current", "Contact" : [ "9745236589", "080-56324587"]}
+{_id: ObjectId("625878659329139694718806"), "CustID": 4, "Name": "Shreyas RS", "Type"
+: "Current", "Contact" : [ "9445678321", "044-65611729"]}
+>db.Bank.getIndexes()
+> db.Bank.update({id:625078659329139694F188a6), ($set: {CustID:53}, {upsert:true});
+uncaught exception: SyntaxError: identifier starts innediately after > numeric literal:
+(shell):1:20
+> db.Bank.update({id:"62585932913941"}, {$set: {CustID:5}}, {upsert:true});
+writeResult({
+nhatched":0,
+"nUpserted" 11,
+"Modified": 0,
+"id":"625d78659329139694f18826"
+})
+> db.Bank.find({});
+{_id: ObjectId("625d7700932913909418882"), "CustID" : 1, "Name": "Trivikran Hegde",
+"Type": "Savings", "Contact":"9945678231" ] }
+{_id: ObjectId("625477bd9329139094F188a3"), "CustID": 2, "Name": "Vishvesh Bhat",
+"Type": "Savings. "Contact" : ["0325981615", "O80-36514521"]}
+{_id: ObjectId("625d77e693291396947188a4"), "CustID": 3, "Name": "Valshak Bhat",
+"Type": "Savings", "Contact": [ "8971456321", "080-33529458"]}
+{_id: ObjectId("825878229329139694188a5"), "CustID: 4, "Name": "Pramod P Parande",
+"Type" : "Current", "Contact" : [ "9745236589", "080-56324587"]}
+{_id: ObjectId("625d766593291390941886"), "CustID": 4, "Name": "Shreyas R S", "Type" :
+"Current", "Contact" : [ "9445678323", "044-65611729"]}
+> db.Bank.update({_id:"6250786593291396947188a6", CustID:4}, {$set: {Name:"Sumantha
+K 5, Type:"Savings", Contact:["9856325478","11-65897458"]},{upsert:true});
+WriteResult("Matched" : 1, "nupserted": 6, "Modified":1})
+> db.Bank.find({});
+{_id: ObjectId("625d7780932913909418882"), "CustID": 1, "Name": "Trivikran Hegde",
+"Type": "Savings", "Contact" : [ "9945678231"] }
+{_id: ObjectId("625d77bd9329139694f188a3"), "CustID": 2, "Name": "Vishvesh Bhat",
+"Type": "Savings, "Contact" : ["6325985615", "080-36514529"]}
+{_id: ObjectId("825d77e6932913969418844"), "CustID" : 3, "Name": "Vaishak Bhat",
+"Type": "Savings", "Contact" : [ "8971456321", "080-34529458"]}
+{_id: ObjectId("625d78229329139094F188a5"), "CustID" : 4, "Name": "Pranod P Parande",
+"Type" : "Current", "Contact" : [ "9745236589", "080-56324587"]}
+{(id: ObjectId("625d78659329139694f188a6"), "CustID: 4, "Name": "Sumantha x 5",
+"Type": "Savings", "Contact" : ["9445678321", "044-05611729"]}
